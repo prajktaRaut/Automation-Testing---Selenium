@@ -4,6 +4,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -68,5 +70,34 @@ public class SeleniumTest extends BaseTest {
         }
     }
 
+    @Test
+    public void mouseAndKeyboardMoves() {
+
+        try {
+            System.setProperty("webdriver.chromedriver.driver","chromedriver");
+            driver.navigate().to("https://www.google.com/");
+            Thread.sleep(2000);
+            Robot robot = new Robot();
+            robot.mouseMove(200,50);
+            Thread.sleep(2000);
+            robot.keyPress(KeyEvent.VK_F);
+            robot.keyPress(KeyEvent.VK_R);
+            robot.keyPress(KeyEvent.VK_ALT);
+            Thread.sleep(3000);
+            robot.keyRelease(KeyEvent.VK_R);
+            robot.keyRelease(KeyEvent.VK_ALT);
+            robot.keyRelease(KeyEvent.VK_F);
+            Thread.sleep(3000);
+            robot.keyPress(KeyEvent.VK_E);
+            robot.keyRelease(KeyEvent.VK_E);
+            Thread.sleep(1000);
+            //driver.close();
+            driver.quit();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
