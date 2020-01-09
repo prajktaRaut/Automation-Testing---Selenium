@@ -48,5 +48,25 @@ public class SeleniumTest extends BaseTest {
         driver.close();
     }
 
+    @Test
+    public void browserNavigationExamples() {
+
+        try {
+            System.setProperty("webdriver.chromedriver.driver","chromedriver");
+            driver.get("https://www.google.com/");
+            Thread.sleep(2000);
+            driver.navigate().to("https://www.gmail.com/");
+            Thread.sleep(2000);
+            driver.navigate().back();
+            Thread.sleep(3000);
+            driver.navigate().forward();
+            Thread.sleep(3000);
+            driver.navigate().refresh();
+            driver.close();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
