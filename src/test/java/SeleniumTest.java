@@ -1,7 +1,9 @@
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -96,6 +98,26 @@ public class SeleniumTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (AWTException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void locatorExample() {
+
+        try {
+            System.setProperty("webdriver.chromedriver.driver","chromedriver");
+            driver.get("https://www.facebook.com");
+            WebElement firstname = driver.findElement(By.name("firstname"));
+            firstname.sendKeys("prajkta");
+            Thread.sleep(2000);
+            WebElement lastname = driver.findElement(By.id("u_0_o"));
+            lastname.sendKeys("Raut");
+            Thread.sleep(3000);
+            WebElement websubmit = driver.findElement(By.linkText("Forgotten account?"));
+            websubmit.click();
+            driver.close();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
