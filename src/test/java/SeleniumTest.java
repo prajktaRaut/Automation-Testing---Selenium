@@ -1,9 +1,8 @@
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -29,7 +28,6 @@ public class SeleniumTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.close();
     }
 
     @Test
@@ -40,16 +38,14 @@ public class SeleniumTest extends BaseTest {
             System.out.println("Current date is "+date);
             String newDate = date.replaceAll(":", "-");
             System.out.println("New date is "+newDate);
-            System.setProperty("webdriver.chrome.driver","chromedriver");
             driver.get("https://www.youtube.com/watch?v=T_4ZFj_KTx4");
             TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
             File srcFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-            File destFile = new File("/home/admin1/Documents/PrajktaRaut/SeleniumDemo/src/test/resources/ScreenShots/image.jpg");
+            File destFile = new File("/home/admin1/Documents/PrajktaRaut/SeleniumDemo/src/test/resources/ScreenShots/"+methodName+".jpg");
             FileUtils.copyFile(srcFile,destFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        driver.close();
     }
 
     @Test
@@ -66,7 +62,6 @@ public class SeleniumTest extends BaseTest {
             driver.navigate().forward();
             Thread.sleep(3000);
             driver.navigate().refresh();
-            driver.close();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -114,13 +109,39 @@ public class SeleniumTest extends BaseTest {
             WebElement lastname = driver.findElement(By.id("u_0_o"));
             lastname.sendKeys("Raut");
             Thread.sleep(3000);
-            WebElement websubmit = driver.findElement(By.linkText("Forgotten account?"));
+           // WebElement websubmit = driver.findElement(By.linkText("Forgotten account?"));
+            WebElement websubmit = driver.findElement(By.name("websubmit"));
             websubmit.click();
+            Thread.sleep(3000);
             driver.close();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void performing_LogoutOperationOf_Facebook() {
+
+        try {
+
+            driver.get("https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110");
+            WebElement email = driver.findElement(By.name("email"));
+            email.sendKeys("9764324126");
+            WebElement password = driver.findElement(By.name("pass"));
+            password.sendKeys("Psraut@123");
+            Thread.sleep(2000);
+            WebElement websubmit = driver.findElement(By.name("login"));
+            websubmit.click();
+            WebElement moreOption = driver.findElement(By.xpath("//div[@id='userNavigationLabel']"));
+            moreOption.click();
+            Thread.sleep(5000);
+            WebElement logout = driver.findElement(By.xpath("//li[@class='_54ni navSubmenu _6398 _64kz __MenuItem']"));
+            logout.click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
 

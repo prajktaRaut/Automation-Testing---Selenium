@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SeleniumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-09T13:25:49" hostname="admin1-desktop" time="16.332">
+<testsuite name="SeleniumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-11T13:08:30" hostname="admin1-desktop" time="9.269">
   <properties/>
-  <testcase name="locatorExample" classname="SeleniumTest" time="16.332"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <testcase name="captureScreenshots" classname="SeleniumTest" time="9.269"/>
+  <system-out><![CDATA[Current date is Sat Jan 11 18:38:30 IST 2020
+New date is Sat Jan 11 18-38-30 IST 2020
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 76.0.3809.68 (420c9498db8ce8fcd190a954d51297672c1515d5-refs/branch-heads/3809@{#864}) on port 30558
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Jan 11, 2020 6:38:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
 </testsuite>
