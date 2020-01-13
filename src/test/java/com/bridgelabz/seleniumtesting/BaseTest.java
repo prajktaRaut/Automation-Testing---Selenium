@@ -1,3 +1,5 @@
+package com.bridgelabz.seleniumtesting;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +11,7 @@ import java.lang.reflect.Method;
 public class BaseTest {
 
     String methodName=null;
-    WebDriver driver = null;
+    public WebDriver driver = null;
     ChromeOptions options = new ChromeOptions();
     @BeforeMethod
     public void setUp(Method method) {

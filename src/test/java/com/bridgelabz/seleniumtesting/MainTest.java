@@ -1,8 +1,8 @@
+package com.bridgelabz.seleniumtesting;
 
+import com.bridgelabz.seleniumtesting.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-public class SeleniumTest extends BaseTest {
+public class MainTest extends BaseTest {
 
     @Test
     public void upcastingToWebdriver_ToLunchBrowser() {
@@ -118,30 +118,6 @@ public class SeleniumTest extends BaseTest {
             e.printStackTrace();
         }
     }
-
-    @Test
-    public void performing_LogoutOperationOf_Facebook() {
-
-        try {
-
-            driver.get("https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110");
-            WebElement email = driver.findElement(By.name("email"));
-            email.sendKeys("9764324126");
-            WebElement password = driver.findElement(By.name("pass"));
-            password.sendKeys("Psraut@123");
-            Thread.sleep(2000);
-            WebElement websubmit = driver.findElement(By.name("login"));
-            websubmit.click();
-            WebElement moreOption = driver.findElement(By.xpath("//div[@id='userNavigationLabel']"));
-            moreOption.click();
-            Thread.sleep(5000);
-            WebElement logout = driver.findElement(By.xpath("//li[@class='_54ni navSubmenu _6398 _64kz __MenuItem']"));
-            logout.click();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
 
 }
 

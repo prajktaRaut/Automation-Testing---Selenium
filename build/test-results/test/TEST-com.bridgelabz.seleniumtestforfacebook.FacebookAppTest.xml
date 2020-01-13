@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.seleniumtestforfacebook.FacebookAppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-13T07:22:34" hostname="admin1-desktop" time="6.964">
+  <properties/>
+  <testcase name="performing_ForgottenAccountOperationOfFacebook" classname="com.bridgelabz.seleniumtestforfacebook.FacebookAppTest" time="6.964"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 76.0.3809.68 (420c9498db8ce8fcd190a954d51297672c1515d5-refs/branch-heads/3809@{#864}) on port 31804
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Jan 13, 2020 12:52:34 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
